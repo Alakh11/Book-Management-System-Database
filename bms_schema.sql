@@ -21,3 +21,8 @@ CREATE TABLE Books (
     FOREIGN KEY (AuthorID) REFERENCES Authors(AuthorID),
     FOREIGN KEY (CategoryID) REFERENCES Categories(CategoryID)
 );
+
+SELECT Books.Title, Authors.AuthorName, Categories.CategoryName
+FROM Books
+JOIN Authors ON Books.AuthorID = Authors.AuthorID
+JOIN Categories ON Books.CategoryID = Categories.CategoryID;
